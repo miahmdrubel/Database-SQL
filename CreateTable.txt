@@ -1,0 +1,17 @@
+
+CREATE table Students(
+
+   ID varchar(10) primary key,
+   Name varchar(20),
+   Age int(3),
+   Dept varchar(10),
+   class varchar(5),
+   Section varchar(5),
+   R0ll_no int(5),
+   Tution_Fee double(10),
+   Father_name varchar(20),
+   Mother_name varchar(20),
+   Mobile_No varchar(15),
+   Email varchar(20)
+
+);
