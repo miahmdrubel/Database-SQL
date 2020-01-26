@@ -1,0 +1,23 @@
+
+***MIN()function:  The following SQL statement finds the price of the cheapest product:
+
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
+
+***MAX()function:  The following SQL statement finds the price of the Largest product:
+SELECT MIN(Price) AS largestPrice
+FROM Products;
+
+***The COUNT() function returns the number of rows that matches a specified criteria.
+   NULL values are not counted.
+   
+SELECT COUNT(ProductID)
+FROM Products;
+
+***The AVG() function returns the average value of a numeric column.NULL Values are Ignored.
+SELECT AVG(Price)
+FROM Products;
+
+***The SUM() function returns the total sum of a numeric column.
+SELECT SUM(Quantity)
+FROM OrderDetails;
