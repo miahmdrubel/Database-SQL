@@ -1,0 +1,9 @@
+
+
+
+***One record will delete:-
+delete from customer
+where id=3;
+
+***All record will delete:-
+delete from customer
