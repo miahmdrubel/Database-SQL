@@ -1,0 +1,39 @@
+*** SQL alias:
+1.SQL aliases are used to give a table, or a column in a table, a temporary name.
+2.Aliases are often used to make column names more readable.
+3.An alias only exists for the duration of the query.
+
+
+***Aliases can be useful when:
+
+1.There are more than one table involved in a query
+2.Functions are used in the query
+3.Column names are big or not very readable
+4.Two or more columns are combined together
+
+
+***Creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country):
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+FROM Customers;
+
+
+
+***selects all the orders from the customer with CustomerID=4 (Around the Horn). We use the "Customers" and "Orders" tables, and give them the table aliases of "c" and "o" respectively (Here we use aliases to make the SQL shorter):
+
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName="Around the Horn" AND c.CustomerID=o.CustomerID;
+
+***When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+
+SELECT CustomerName,
+Address,
+PostalCode as Pno
+FROM Customers;
+
+***When displaying the Customers table, refer to the table as Consumers instead of Customers.
+
+SELECT *
+FROM Customers as Consumers;
+
+ 
