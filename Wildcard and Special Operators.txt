@@ -1,0 +1,102 @@
+ ***Table:Salesman
+
+ salesman_id |    name    |   city   | commission 
+-------------+------------+----------+------------
+        5001 | James Hoog | New York |       0.15
+        5002 | Nail Knite | Paris    |       0.13
+        5005 | Pit Alex   | London   |       0.11
+        5006 | Mc Lyon    | Paris    |       0.14
+        5007 | Paul Adam  | Rome     |       0.13
+        5003 | Lauson Hen | San Jose |       0.12
+
+ *** Write a SQL statement to find those salesmen with all information who come from the city either Paris or Rome. 
+ select *
+ from salesman
+ where city = "Paris" OR city = "Rome";
+
+ *** Write a query to filter those salesmen with all information who comes from any of the cities Paris and Rome
+
+ select *
+ from salesman
+ where city in("Paris","Rome");    
+
+ ***. Write a query to produce a list of salesman_id, name, city and commission of each salesman who live in cities other than Paris and Rome. 
+
+ select *
+ from salesman
+ where city not in("Paris","Rome");   
+
+
+***Table:Customer
+
+customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
+        3008 | Julian Green   | London     |   300 |        5002
+        3004 | Fabian Johnson | Paris      |   300 |        5006
+        3009 | Geoff Cameron  | Berlin     |   100 |        5003
+        3003 | Jozy Altidor   | Moscow     |   200 |        5007
+        3001 | Brad Guzan     | London     |       |        5005
+
+ *** Write a query to sort out those customers with all information whose ID value is within any of 3007, 3008 and 3009.
+
+ select *
+ from salesman;
+ where  customer_id in (3007,3008,3009);
+
+
+ ***Write a SQL statement to find those salesmen with all information who gets the commission within a range of 0.12 and 0.14.
+
+ select *
+ from salesman
+ where  commission between 0.12 and 0.14;
+
+***Table: Salesman 
+
+  salesman_id |    name    |   city   | commission 
+-------------+------------+----------+------------
+        5001 | James Hoog | New York |       0.15
+        5002 | Nail Knite | Paris    |       0.13
+        5005 | Pit Alex   | London   |       0.11
+        5006 | Mc Lyon    | Paris    |       0.14
+        5007 | Paul Adam  | Rome     |       0.13
+        5003 | Lauson Hen | San Jose |       0.12  
+
+*** Write a SQL statement to find those salesmen with all other information and name started with other than any latter within 'A' and 'L'.  
+
+select *
+from salesman
+where name not between "A" and "L";
+
+***Write a SQL statement to find that customer with all information whose name begin with the letter 'B'.
+select *
+from Customer
+where cust_name like "B%";
+
+***Write a SQL statement to find all those customers with all information whose names are ending with the letter 'n'.
+
+select *
+from Customer
+where cust_name like "%n";
+
+***Write a SQL statement to find those salesmen with all information whose name containing the 1st character is 'N' and the 4th character is 'l' and rests may be any character.
+
+select *
+from Salesman
+where name like "N__l%";
+
+
+***Write a SQL statement to find that customer with all information who does not get any grade except NULL
+
+select *
+from customer
+where where grade is null;
+
+
+***Write a SQL statement to find that customer with all information who does get any grade except NULL
+
+select *
+from customer
+where where grade is not null;
